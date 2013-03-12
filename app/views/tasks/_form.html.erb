@@ -1,0 +1,57 @@
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :free %><br />
+    <%= f.check_box :free %>
+  </div>
+  <div class="field">
+    <%= f.label :paid %><br />
+    <%= f.check_box :paid %>
+  </div>
+  <div class="field">
+    <%= f.label :impact_score %><br />
+    <%= f.number_field :impact_score %>
+  </div>
+  <div class="field">
+    <%= f.label :doability_score %><br />
+    <%= f.number_field :doability_score %>
+  </div>
+  <div class="field">
+    <%= f.label :time_taken %><br />
+    <%= f.time_select :time_taken %>
+  </div>
+  <div class="field">
+    <%= f.label :reqruires_developer %><br />
+    <%= f.check_box :reqruires_developer %>
+  </div>
+  <div class="field">
+    <%= f.label :requires_client %><br />
+    <%= f.check_box :requires_client %>
+  </div>
+  <div class="field">
+    <%= f.label :risk_score %><br />
+    <%= f.number_field :risk_score %>
+  </div>
+  <div class="field">
+    <%= f.label :total_score %><br />
+    <%= f.text_field :total_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

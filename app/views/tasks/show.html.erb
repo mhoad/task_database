@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @task.name %>
+</p>
+
+<p>
+  <b>Free:</b>
+  <%= @task.free %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%= @task.paid %>
+</p>
+
+<p>
+  <b>Impact score:</b>
+  <%= @task.impact_score %>
+</p>
+
+<p>
+  <b>Doability score:</b>
+  <%= @task.doability_score %>
+</p>
+
+<p>
+  <b>Time taken:</b>
+  <%= @task.time_taken %>
+</p>
+
+<p>
+  <b>Reqruires developer:</b>
+  <%= @task.reqruires_developer %>
+</p>
+
+<p>
+  <b>Requires client:</b>
+  <%= @task.requires_client %>
+</p>
+
+<p>
+  <b>Risk score:</b>
+  <%= @task.risk_score %>
+</p>
+
+<p>
+  <b>Total score:</b>
+  <%= @task.total_score %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

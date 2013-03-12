@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  free: false
+  paid: false
+  impact_score: 1
+  doability_score: 1
+  time_taken: 2013-03-12 17:16:38
+  reqruires_developer: false
+  requires_client: false
+  risk_score: 1
+  total_score: 9.99
+
+two:
+  name: MyString
+  free: false
+  paid: false
+  impact_score: 1
+  doability_score: 1
+  time_taken: 2013-03-12 17:16:38
+  reqruires_developer: false
+  requires_client: false
+  risk_score: 1
+  total_score: 9.99
