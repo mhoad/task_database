@@ -25,7 +25,7 @@
   <dt><strong><%= model_class.human_attribute_name(:total_score) %>:</strong></dt>
   <dd><%= @task.total_score %></dd>
   <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
-  <dd><%= @task.category_id %></dd>
+  <dd><%= Category.find(@task.category_id).name %></dd>
 </dl>
 
 <div class="form-actions">

@@ -17,7 +17,6 @@
       <th><%= model_class.human_attribute_name(:risk_score) %></th>
       <th><%= model_class.human_attribute_name(:total_score) %></th>
       <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -25,7 +24,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= link_to task.id, task_path(task) %></td>
-        <td><%= task.name %></td>
+        <td><%= link_to task.name, task_path(task)%></td>
         <td><%= task.free %></td>
         <td><%= task.paid %></td>
         <td><%= task.impact_score %></td>
@@ -35,8 +34,7 @@
         <td><%= task.requires_client %></td>
         <td><%= task.risk_score %></td>
         <td><%= task.total_score %></td>
-        <td><%= task.category_id %></td>
-        <td><%=l task.created_at %></td>
+        <td><%= Category.find(task.category_id).name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_task_path(task), :class => 'btn btn-mini' %>
