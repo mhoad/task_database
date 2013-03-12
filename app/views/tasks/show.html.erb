@@ -14,8 +14,8 @@
   <dd><%= @task.impact_score %></dd>
   <dt><strong><%= model_class.human_attribute_name(:doability_score) %>:</strong></dt>
   <dd><%= @task.doability_score %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:time_taken) %>:</strong></dt>
-  <dd><%= @task.time_taken %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:estimated_time) %>:</strong></dt>
+  <dd><%= (@task.estimated_time.to_f/60).round(2) %> Hours</dd>
   <dt><strong><%= model_class.human_attribute_name(:reqruires_developer) %>:</strong></dt>
   <dd><%= @task.reqruires_developer %></dd>
   <dt><strong><%= model_class.human_attribute_name(:requires_client) %>:</strong></dt>

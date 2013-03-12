@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312064806) do
+ActiveRecord::Schema.define(:version => 20130312102527) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20130312064806) do
     t.boolean  "paid"
     t.integer  "impact_score"
     t.integer  "doability_score"
-    t.time     "time_taken"
     t.boolean  "reqruires_developer"
     t.boolean  "requires_client"
     t.integer  "risk_score"
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130312064806) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.integer  "category_id"
+    t.integer  "estimated_time"
   end
 
 end

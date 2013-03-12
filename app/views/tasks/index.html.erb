@@ -11,7 +11,7 @@
       <th><%= model_class.human_attribute_name(:paid) %></th>
       <th><%= model_class.human_attribute_name(:impact_score) %></th>
       <th><%= model_class.human_attribute_name(:doability_score) %></th>
-      <th><%= model_class.human_attribute_name(:time_taken) %></th>
+      <th><%= model_class.human_attribute_name(:estimated_time) %> (Mins)</th>
       <th><%= model_class.human_attribute_name(:reqruires_developer) %></th>
       <th><%= model_class.human_attribute_name(:requires_client) %></th>
       <th><%= model_class.human_attribute_name(:risk_score) %></th>
@@ -29,7 +29,7 @@
         <td><%= task.paid %></td>
         <td><%= task.impact_score %></td>
         <td><%= task.doability_score %></td>
-        <td><%= task.time_taken %></td>
+        <td><%= task.estimated_time %></td>
         <td><%= task.reqruires_developer %></td>
         <td><%= task.requires_client %></td>
         <td><%= task.risk_score %></td>
