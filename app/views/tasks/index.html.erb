@@ -1,41 +1,56 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Free</th>
-    <th>Paid</th>
-    <th>Impact score</th>
-    <th>Doability score</th>
-    <th>Time taken</th>
-    <th>Reqruires developer</th>
-    <th>Requires client</th>
-    <th>Risk score</th>
-    <th>Total score</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.free %></td>
-    <td><%= task.paid %></td>
-    <td><%= task.impact_score %></td>
-    <td><%= task.doability_score %></td>
-    <td><%= task.time_taken %></td>
-    <td><%= task.reqruires_developer %></td>
-    <td><%= task.requires_client %></td>
-    <td><%= task.risk_score %></td>
-    <td><%= task.total_score %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Task -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:free) %></th>
+      <th><%= model_class.human_attribute_name(:paid) %></th>
+      <th><%= model_class.human_attribute_name(:impact_score) %></th>
+      <th><%= model_class.human_attribute_name(:doability_score) %></th>
+      <th><%= model_class.human_attribute_name(:time_taken) %></th>
+      <th><%= model_class.human_attribute_name(:reqruires_developer) %></th>
+      <th><%= model_class.human_attribute_name(:requires_client) %></th>
+      <th><%= model_class.human_attribute_name(:risk_score) %></th>
+      <th><%= model_class.human_attribute_name(:total_score) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to task.id, task_path(task) %></td>
+        <td><%= task.name %></td>
+        <td><%= task.free %></td>
+        <td><%= task.paid %></td>
+        <td><%= task.impact_score %></td>
+        <td><%= task.doability_score %></td>
+        <td><%= task.time_taken %></td>
+        <td><%= task.reqruires_developer %></td>
+        <td><%= task.requires_client %></td>
+        <td><%= task.risk_score %></td>
+        <td><%= task.total_score %></td>
+        <td><%= task.category_id %></td>
+        <td><%=l task.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_task_path(task), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      task_path(task),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Task', new_task_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_task_path,
+            :class => 'btn btn-primary' %>
