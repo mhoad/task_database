@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :doability_score, :free, :impact_score, :name, :paid, :reqruires_developer, :requires_client, :risk_score, :estimated_time, :total_score, :category_id
+  attr_accessible :doability_score, :free, :impact_score, :name, :paid, :reqruires_developer, :requires_client, :risk_score, :estimated_time, :total_score, :category_id, :description
   belongs_to :category
   before_save :calculate_total_score
 
